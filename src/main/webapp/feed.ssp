@@ -1,0 +1,5 @@
+#do(layout("layout.ssp"))
+	#set (content)
+		"We're importing your Weibo statuses for analysis, please give us couples of seconds so we can provide you a better search result and suggestions!"
+	#end
+#end

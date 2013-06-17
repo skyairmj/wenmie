@@ -1,0 +1,135 @@
+#do(layout("layout.ssp"))
+	#set (content)
+		<div id="container" class="container">
+			<div class="row">
+				<!-- Results list and tabular data -->
+				<div class="span8" id="results-main">
+					<h4>
+						<small><a href="#">揾乜</a> 已为您找到相关结果约 100,0000 个</small>
+					</h4>
+
+					<!-- part reslults -->
+					<div id="results" class="results-on">
+						#import(com.weibomate.web.Tweet)
+						<%@ import val tweets: List[Tweet] %>
+						#for (tweet <- tweets)
+						<section class="result-part">
+							<img id="result-thumb" class="pull-left" src="${tweet.userProfileImageUrl}">
+							<h3>
+								<a href="http://weibo.com/u/${tweet.userId}" class="view-detail" style="padding-left:10px">${tweet.userScreenName}</a>
+							</h3>
+							<p class="short-desc pull-left">${tweet.text}</p>
+							<div class="price-avail pull-right">
+								<!-- star rating inputs -->
+								<!-- input name="rating1" type="radio" class="star">
+								<input name="rating1" type="radio" class="star">
+								<input name="rating1" type="radio" class="star" checked="checked">
+								<input name="rating1" type="radio" class="star">
+								<input name="rating1" type="radio" class="star"-->
+								<!-- price and availability -->
+								<!-- p class="price">Price: $95.00</p>
+								<p class="avail">Availability: In Stock</p-->
+								<p>
+									<button class="btn btn-success">
+										Like <i class="icon-thumbs-up icon-white"></i>
+									</button>
+								</p>
+								<p>
+									<button class="btn btn-warning">
+										Dislike <i class="icon-thumbs-down icon-white"></i>
+									</button>
+								</p>
+							</div>
+						</section>
+						#end
+						<section class="result-sugg">
+							<h3>
+								<a href="#">您可能会对下面的内容也会感兴趣</a>
+							</h3>
+							<ul id="result-sugg-list">
+								<li>
+									<a href="#" alt="View the PDF">
+										<img class="logo-sugg pull-left" src="/img/logo-1.jpg" alt="Visit the Website" />
+										<span class="pull-left">
+											<div class="suggest">
+												<h4 class="pull-left">Shoe Outdoor Wear</h4>
+												<p class="results-link pull-left" href="#">Other Store</p>
+											</div>
+											<p class="sugg-blurb">
+												Blah blah blah <em>Shoe classic</em> blah blah...
+											</p>
+										</span>
+									</a>
+								</li>
+								<li>
+									<a href="#" alt="View the Website">
+										<img class="logo-sugg pull-left" src="/img/logo-2.png" alt="Visit the Website" />
+										<span class="pull-left">
+											<div class="suggest">
+												<h4 class="pull-left">Shoe Sports</h4>
+												<p class="results-link pull-left" href="#">Another Store</p>
+											</div>
+											<p class="sugg-blurb">
+												Blah blah blah <em>Shoe classic</em> blah blah...
+											</p>
+										</span>
+									</a>
+								</li>
+							</ul>
+						</section>
+						<br>
+					</div>
+				</div>
+				<!-- end parts results -->
+				<div class="span4">
+					<sidebar>
+						<h3>可能感兴趣的人</h3>
+						<ul id="result-sugg-list">
+							<li>
+								<a href="#" alt="View the PDF" title="View the PDF">
+									<img class="logo-sugg pull-left" src="/img/logo-1.jpg" alt="Visit the Website" />
+									<span class="pull-left">
+										<div class="suggest">
+											<h4 class="pull-left">Shoe Outdoor Wear</h4>
+											<p class="results-link pull-left" href="#">Other Store</p>
+										</div>
+										<p class="sugg-blurb">
+											Blah blah blah <em>Shoe classic</em> blah blah...
+										</p>
+									</span>
+								</a>
+							</li>
+							<li>
+								<a href="#" alt="View the Website" title="View the Website">
+									<img class="logo-sugg pull-left" src="/img/logo-2.png" alt="Visit the Website" />
+									<span class="pull-left">
+										<div class="suggest">
+											<h4 class="pull-left">Shoe Sports</h4>
+											<p class="results-link pull-left" href="#">Another Store</p>
+										</div>
+										<p class="sugg-blurb">
+											Blah blah blah <em>Shoe classic</em> blah blah...
+										</p>
+									</span>
+								</a>
+							</li>
+						</ul>
+					</sidebar>
+				</div>
+				<!-- div class="span3">
+					<h3>Give us Feedback</h3>
+					<p>Here at Acme, we've been working hard to get you the stuff
+						you want at the speed you expect. We'd love to hear what you think
+						of our latest attempt. Love it, hate it, we want to know if we're
+						giving you the best experience possible. So what do you think?</p>
+					<form>
+						<input name="name" type="text" placeholder="Your Name">
+						<textarea name="comments" placeholder="Your Comments"></textarea>
+						<button type="submit" class="btn">Submit</button>
+					</form>
+
+				</div-->
+			</div>
+		</div>
+	#end
+#end

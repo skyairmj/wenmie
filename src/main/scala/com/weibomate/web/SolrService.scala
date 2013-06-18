@@ -36,7 +36,7 @@ class SolrService extends StatusService {
 
   def feed(statuses: List[Status]) = {
     try {
-      val server = new HttpSolrServer("http://solr.ap01.aws.af.cm/")
+      val server = new HttpSolrServer("http://localhost:8080/solr")
       var docs = List[SolrInputDocument]()
 
       statuses.foreach(status => {
